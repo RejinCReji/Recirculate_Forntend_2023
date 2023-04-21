@@ -151,18 +151,18 @@ function ProductScreen({ match, history }) {
 
                             <Row>
                                 <Col md={6}>
-                                    <h4>Reviews</h4>
-                                    {product.reviews.length === 0 && <Message variant='info'>No Reviews</Message>}
-
+                                    {/* <h4>Reviews</h4>
+                                    {product.reviews.length === 0 && <Message variant='info'>No Reviews</Message>} */}
+                                    {/* backend currently does not pass reviews in product details */}
                                     <ListGroup variant='flush'>
-                                        {product.reviews.map((review) => (
+                                        {/* {product.reviews.map((review) => (
                                             <ListGroup.Item key={review._id}>
                                                 <strong>{review.name}</strong>
                                                 <Rating value={review.rating} color='#f8e825' />
                                                 <p>{review.createdAt.substring(0, 10)}</p>
                                                 <p>{review.comment}</p>
                                             </ListGroup.Item>
-                                        ))}
+                                        ))} */}
 
                                         <ListGroup.Item>
                                             <h4>Write a review</h4>
