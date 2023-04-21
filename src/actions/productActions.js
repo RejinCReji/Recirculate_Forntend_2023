@@ -110,12 +110,12 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
         const config = {
             headers: {
                 'Content-type': 'application/json',
-                Authorization: `Bearer ${userInfo.token}`
+                Authorization: `token ${userInfo.token}`
             }
         }
 
         const { data } = await axios.delete(
-            `/api/products/delete/${id}/`,
+            `/products/delete/${id}/`,
             config
         )
 
@@ -150,12 +150,12 @@ export const createProduct = () => async (dispatch, getState) => {
         const config = {
             headers: {
                 'Content-type': 'application/json',
-                Authorization: `Bearer ${userInfo.token}`
+                Authorization: `token ${userInfo.token}`
             }
         }
 
         const { data } = await axios.post(
-            `/api/products/create/`,
+            `/products/create/`,
             {},
             config
         )
@@ -190,12 +190,12 @@ export const updateProduct = (product) => async (dispatch, getState) => {
         const config = {
             headers: {
                 'Content-type': 'application/json',
-                Authorization: `Bearer ${userInfo.token}`
+                Authorization: `token ${userInfo.token}`
             }
         }
 
         const { data } = await axios.put(
-            `/api/products/update/${product._id}/`,
+            `/products/update/${product._id}/`,
             product,
             config
         )
@@ -234,12 +234,12 @@ export const createProductReview = (productId, review) => async (dispatch, getSt
         const config = {
             headers: {
                 'Content-type': 'application/json',
-                Authorization: `Bearer ${userInfo.token}`
+                Authorization: `token ${userInfo.token}`
             }
         }
 
         const { data } = await axios.post(
-            `/api/products/${productId}/reviews/`,
+            `/products/${productId}/reviews/`,
             review,
             config
         )
