@@ -36,7 +36,7 @@ export const listProducts = (keyword = '') => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_LIST_REQUEST })
 
-        const { data } = await axios.get(`/products/all-products/`)
+        const { data } = await axios.get(`/api/products/all-products/`)
 
         dispatch({
             type: PRODUCT_LIST_SUCCESS,
@@ -57,7 +57,7 @@ export const listTopProducts = () => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_TOP_REQUEST })
 
-        const { data } = await axios.get(`/products/top/`)
+        const { data } = await axios.get(`/api/products/top/`)
 
         dispatch({
             type: PRODUCT_TOP_SUCCESS,
@@ -79,7 +79,7 @@ export const listProductDetails = (id) => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_DETAILS_REQUEST })
 
-        const { data } = await axios.get(`/products/products/${id}`)
+        const { data } = await axios.get(`/api/products/products/${id}`)
 
         dispatch({
             type: PRODUCT_DETAILS_SUCCESS,
@@ -155,7 +155,7 @@ export const createProduct = () => async (dispatch, getState) => {
         }
 
         const { data } = await axios.post(
-            `/products/create/`,
+            `/api/products/create/`,
             {},
             config
         )
@@ -195,7 +195,7 @@ export const updateProduct = (product) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.put(
-            `/products/update/${product._id}/`,
+            `/api/products/update/${product._id}/`,
             product,
             config
         )
@@ -239,7 +239,7 @@ export const createProductReview = (productId, review) => async (dispatch, getSt
         }
 
         const { data } = await axios.post(
-            `/products/${productId}/reviews/`,
+            `/api/products/${productId}/reviews/`,
             review,
             config
         )
