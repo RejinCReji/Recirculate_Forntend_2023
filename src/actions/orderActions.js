@@ -49,7 +49,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.post(
-            `/products/add/`,
+            `/api/products/add/`,
             order,
             config
         )
